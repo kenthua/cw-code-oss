@@ -32,5 +32,5 @@ RUN wget -O vscode-icons.vsix $(curl -q https://open-vsx.org/api/vscode-icons-te
     && mv extension /opt/code-oss/extensions/vscode-icons
 
 # Copy workstation customization script
-COPY workstation-customization.sh /etc/workstation-startup.d/300_workstation-customization.sh
-RUN chmod +x /etc/workstation-startup.d/300_workstation-customization.sh
+# COPY workstation-customization.sh /etc/workstation-startup.d/300_workstation-customization.sh
+# RUN chmod +x /etc/workstation-startup.d/300_workstation-customization.sh
