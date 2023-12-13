@@ -23,11 +23,11 @@ RUN curl -s https://api.github.com/repos/derailed/k9s/releases/latest \
 | wget -qi - && mkdir -p /opt/workstation/bin && tar -xf k9s_Linux_amd64.tar.gz  -C /opt/workstation/bin
 
 # Install krew
-RUN curl -s https://api.github.com/kubernetes-sigs/krew/releases/latest \
+RUN curl -s https://api.github.com/repos/kubernetes-sigs/krew/releases/latest \
 | grep "browser_download_url.*linux_amd64.tar.gz" \
 | cut -d : -f 2,3 \
 | tr -d \" \
-| wget -qi - && tar -xf krew-linux_amd64.tar.gz -C /opt/workstation/bin
+| wget -qi - && tar -xf krew-linux_amd64.tar.gz -C /opt/workstation/bin && mv /opt/workstation/bin/krew-linux_amd64 /opt/workstation/bin/krew
 
 # Install extensions
 RUN wget -O terraform.vsix $(curl -q https://open-vsx.org/api/hashicorp/terraform/linux-x64 | jq -r '.files.download') \
