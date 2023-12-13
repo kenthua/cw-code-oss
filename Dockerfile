@@ -1,13 +1,13 @@
 FROM us-central1-docker.pkg.dev/cloud-workstations-images/predefined/code-oss:latest
 
-RUN wget -O- https://apt.releases.hashicorp.com/gpg | \
-gpg --dearmor | \
-sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg && \
-echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
-https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
-sudo tee /etc/apt/sources.list.d/hashicorp.list
-RUN sudo apt update && sudo apt install -y zsh gnupg software-properties-common terraform
-RUN apt-get clean
+# RUN wget -O- https://apt.releases.hashicorp.com/gpg | \
+# gpg --dearmor | \
+# sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg && \
+# echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] \
+# https://apt.releases.hashicorp.com $(lsb_release -cs) main" | \
+# sudo tee /etc/apt/sources.list.d/hashicorp.list
+# RUN sudo apt update && sudo apt install -y zsh gnupg software-properties-common terraform
+# RUN apt-get clean
 
 # Install zsh
 # ENV ZSH=/opt/workstation/oh-my-zsh
