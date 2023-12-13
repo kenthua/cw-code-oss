@@ -22,6 +22,7 @@ else
 
     cat << 'EOF' > /home/user/.zshrc
 export PATH="$PATH:/opt/workstation/bin"
+export PATH="$PATH:/home/user/.krew/bin"
 
 export ZSH=/opt/workstation/oh-my-zsh
 export ZSH_THEME="powerlevel10k/powerlevel10k"
